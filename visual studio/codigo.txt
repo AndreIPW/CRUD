@@ -1,0 +1,45 @@
+window.onload = inicializar;
+var formConvalidaciones;
+var refConvalidaciones;
+var tbodyTablaConvalidaciones;
+
+function inicializar(){
+   formConvalidaciones = document.getElementById("form-convalidaciones");
+   formConvalidaciones.addEventListener("submit", enviarConvalidacionesAFirebase, false);
+
+   tbodyTablaConvalidaciones = document.getElementById("tbody-tabla-convalidaciones");
+
+   refconvalidaciones = firebase.database().ref();
+
+   mostrarConvalidacionesDeFirebase();
+}
+
+function mostrarConvalidacionesDeFirebase(){
+    refConvalidaciones.on("value", function(snap){
+        var datos = snap.val();
+        var filasaAMostrar = "";
+        for(var key in datos){
+            filasAMostrar += "<tr>" +
+                              "<td>" + datos[key].cicloAConvalidar   + "</td>" +
+                              "<td>" + datos[key].cilcoAportado   + "</td>" +
+                              "<td>" + datos[key].moduloAConvalidar   + "</td>" +
+                              "<td>" + datos[key].moduloAportado   + "</td>" +
+                              "<td></td>" +
+                              "<td></td>" +
+                            "</tr>";
+        }
+    tbodyTablaConvalidaciones.innerHTML = filasAMostrar;
+    });
+}
+
+function enviarConvalidacionesAFirebase(event){
+    event.preventDefault();
+   refConvalidaciones.push({
+    moduloAConvalidar: event.target.moduloAConvalidar.value ,
+    cicloAConvalidar: event.target.cicloAConvalidar.value ,
+      moduloAportado: event.target.moduloAportado.value,
+       cicloAportado: event.target.cicloAportado.value 
+   });
+   formConvalidaciones.reset();
+}
+

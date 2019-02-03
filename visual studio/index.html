@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Project=One</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>      
+    <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
+   <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCAeBtFDpE-XiBSJxyjfMbwbgs4HOJz5qM",
+    authDomain: "tabla-convalidaciones.firebaseapp.com",
+    databaseURL: "https://tabla-convalidaciones.firebaseio.com",
+    projectId: "tabla-convalidaciones",
+    storageBucket: "tabla-convalidaciones.appspot.com",
+    messagingSenderId: "602339495419"
+  };
+  firebase.initializeApp(config);
+</script>
+</head>
+<body>
+    <h1>Project One</h1>
+<br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6"> 
+          <table class="table  table-hover">
+              <thead>
+                  <tr>
+                      <th colspan="2">Estudios a Convalidar</th>
+                      <th colspan="2">Estudios Aportados</th>
+                      <th></th>
+                      <th></th>
+                      </tr>
+                      <tr>
+                    <th>Ciclos</th>
+                    <th>Modulo</th>
+                    <th>Ciclos</th>
+                    <th>Modulo</th>
+                    <th></th>
+                    <th></th>
+                  </tr>
+              </thead>
+              <tbody id="tbody-tabla-convalidaciones">
+
+              </tbody>
+          </table>
+       </div>
+         <div class="col-sm-1">
+
+       </div>
+         <div class="col-sm-4">
+
+          <form id="form-convalidaciones">
+           <div class="form-group">
+             <label for="modulo-a-Convalidar">Modulo a Convalidar</label>
+             <input type="text" class="form-control" name="moduloAConvalidar" value="" id="modulo-a-convalidar">
+            </div>
+
+            <div class="form-group">
+                    <label for="ciclo-a-Convalidar">Ciclo a Convalidar</label>
+                    <input type="text" class="form-control" name="cicloAConvalidar" value="" id="ciclo-a-convalidar">
+            </div>
+            <div class="form-group">
+                        <label for="modulo-Aportado">Modulo Aportado</label>
+                        <input type="text" class="form-control" name="moduloAportado" value="" id="modulo-aportado">
+            </div>
+            <div class="form-group">
+                            <label for="ciclo-Aportado">Ciclo Aportado</label>
+                            <input type="text" class="form-control" name="cicloAportado" value="" id="ciclo-aportado">
+                        <input type="submit" name="" value="Crear Convalidacion">
+            </div>
+         </form>
+        </div>
+    </div>
+<script src="js/convalidaciones.js"> </script>
+<script src="js/jquery-3.3.1.js"> </script>
+ </body>
+</html>
