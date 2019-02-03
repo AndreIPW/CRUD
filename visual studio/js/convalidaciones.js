@@ -27,7 +27,7 @@ function mostrarConvalidacionesDeFirebase(){
             "<td>" + datos[key].moduloAConvalidar + "</td>" +
             "<td>" + datos[key].cicloAportado + "</td>" +
             "<td>" + datos[key].moduloAportado + "</td>" +
-            '<td><span class="glyphicon glyphicon-trash"></span></td>' +
+            '<td></td>' +
             '<td>' +
             '<button class="btn btn-danger">' +
                 '<span class="glyphicon glyphicon-trash"></span>' + 
